@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbvu2bnfkfmbm"]
+
+[ext_resource type="Script" path="res://scripts/endingMusic.gd" id="1_nld2j"]
+
+[node name="EndScene" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1151.0
+offset_bottom = 646.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 646.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+script = ExtResource("1_nld2j")
