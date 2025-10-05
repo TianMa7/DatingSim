@@ -4,21 +4,39 @@ extends VBoxContainer
 @export var chatContainer : VBoxContainer
 @export var buttonContainer : VBoxContainer
 
-@export var charRes : DAwkyMessages
-@export var playerRes : DAwkyResponses
+@export var chipperCharRes : Resource
+@export var chipperPlayRes : Resource
+@export var d_chipperCharRes : Resource
+@export var d_chipperPlayRes : Resource
+
+@export var badeCharRes : Resource
+@export var badePlayRes : Resource
+@export var d_badeCharRes : Resource
+@export var d_badePlayRes : Resource
+
+@export var gooseCharRes : Resource
+@export var goosePlayRes : Resource
+@export var d_gooseCharRes : Resource
+@export var d_goosePlayRes : Resource
+
+@export var awkyCharRes : Resource
+@export var awkyPlayRes : Resource
+@export var d_awkyCharRes : Resource
+@export var d_awkyPlayRes : Resource
+
+var charRes : Resource
+var playerRes : Resource
 
 var buttonLinkID = [-1, -1, -1]
 
 signal on_response(responseID : int)
-signal on_init(responses : DAwkyMessages)
+signal on_init(responses : Resource)
 
 func _ready() -> void:
+	findProfile(SelectedProfileSingleton.profile)
+	
 	on_init.emit(charRes)
 	buttonContainer.visible = true
-	
-	#if buttonContainer:
-		#for button in buttonContainer.get_children():
-			#button.visible = false
 
 func _on_message_1_down() -> void:
 	add_chat(buttonContainer.get_children()[0].text, buttonLinkID[0])
@@ -58,3 +76,29 @@ func _on_chat_response_finish(messageGroupID: int) -> void:
 		print(button.visible)
 		
 		buttonLinkID[i] = group[i][0]
+
+func findProfile(profile : String):
+	if profile == "chipper":
+		charRes = chipperCharRes
+		playerRes = chipperPlayRes
+	elif profile == "d_chipper":
+		charRes = d_chipperCharRes
+		playerRes = d_chipperPlayRes
+	elif profile == "bade":
+		charRes = badeCharRes
+		playerRes = badePlayRes
+	elif profile == "d_bade":
+		charRes = d_badeCharRes
+		playerRes = d_badePlayRes
+	elif profile == "goose":
+		charRes = gooseCharRes
+		playerRes = goosePlayRes
+	elif profile == "d_goose":
+		charRes = d_gooseCharRes
+		playerRes = d_goosePlayRes
+	elif profile == "awky":
+		charRes = awkyCharRes
+		playerRes = awkyPlayRes
+	else:
+		charRes = d_awkyCharRes
+		playerRes = d_awkyPlayRes

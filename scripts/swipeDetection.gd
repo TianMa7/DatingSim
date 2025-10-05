@@ -6,6 +6,8 @@ const tolerance = 20
 var swiping = false
 var swipeRight = false
 
+var currentPersonality : String
+
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("press"):
 		swiping = true
@@ -16,12 +18,13 @@ func _process(delta: float) -> void:
 			if startPos.distance_to(currPos)>=tolerance:
 				if (currPos.x-startPos.x)>0:
 					swipeRight = true
+					SelectedProfileSingleton.set_personality(currentPersonality)
 					get_tree().change_scene_to_file("res://scenes/base.tscn")
 				else:
 					swipeRight = false
 					$phoneTex/phoneContainer/phoneContainer2/ProfilePhotoTex.generateProfilePic()
 					#you have to set profilepic first cuz the logic of wether or not its a goose will overwrite it in the function below
-					$phoneTex/phoneContainer/phoneContainer2/ProfileTextLabel.generateNewProfile()
+					currentPersonality = $phoneTex/phoneContainer/phoneContainer2/ProfileTextLabel.generateNewProfile()
 					
 				swiping = false
 	

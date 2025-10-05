@@ -15,6 +15,10 @@ run/main_scene="uid://c5jxyh2x7o3mq"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SelectedProfileSingleton="*res://scripts/selected_profile_singleton.gd"
+
 [input]
 
 press={
