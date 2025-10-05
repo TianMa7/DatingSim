@@ -1,7 +1,7 @@
 class_name DAwkyMessages
 extends Resource
 
-var messages = {
+@export var messages = {
 	0 : [0, "hiiiii!"],
 	1 : [1, "Ahhhhhh I missed my bus to work this morning and then it started raining and I didn’t bring an umbrella so i was just kinda of huddling under the little ledge thing they have in front of the conveniences store door but anyways I was always just so so hungry and the geese were kinda also nearby hiding from the rain so I just had a little snack before the train got there and by the time I got to the pastry store was sold out of the red stuff but yeah"],
 	2 : [2, "I like watching tv shows"],

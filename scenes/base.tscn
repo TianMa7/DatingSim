@@ -1,10 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5jxyh2x7o3mq"]
+[gd_scene load_steps=10 format=3 uid="uid://c5jxyh2x7o3mq"]
 
 [ext_resource type="Texture2D" uid="uid://b8sq5t5tbup3i" path="res://assets/smart-phone-with-blank-screen-is-removebg-preview.png" id="1_3vi8l"]
-[ext_resource type="Script" uid="uid://cx70y7axdhy4o" path="res://reportBtn.gd" id="1_ohhpf"]
+[ext_resource type="Script" path="res://reportBtn.gd" id="1_ohhpf"]
 [ext_resource type="Texture2D" uid="uid://b0yrg6w3ujsmo" path="res://assets/me-dude.png" id="2_8rhti"]
-[ext_resource type="Script" uid="uid://bp1ga0hmmbtkl" path="res://scripts/phone_container.gd" id="2_ohhpf"]
-[ext_resource type="Script" uid="uid://c1xnotw5ibo7d" path="res://scripts/response_manager.gd" id="4_ohhpf"]
+[ext_resource type="Script" uid="uid://bid8oq3r8g0ue" path="res://info/d_awky_msgs.gd" id="4_hh5oj"]
+[ext_resource type="Script" uid="uid://bp1ga0hmmbtkl" path="res://scripts/player_manager.gd" id="4_ohhpf"]
+[ext_resource type="Script" uid="uid://c1xnotw5ibo7d" path="res://scripts/character_manager.gd" id="5_40w10"]
+[ext_resource type="Script" uid="uid://c4f2m5mvmjhdl" path="res://info/d_awky_resp.gd" id="5_vqfsp"]
+
+[sub_resource type="Resource" id="Resource_hh5oj"]
+script = ExtResource("4_hh5oj")
+metadata/_custom_type_script = "uid://bid8oq3r8g0ue"
+
+[sub_resource type="Resource" id="Resource_vqfsp"]
+script = ExtResource("5_vqfsp")
+metadata/_custom_type_script = "uid://c4f2m5mvmjhdl"
 
 [node name="root" type="Node2D"]
 
@@ -47,9 +57,11 @@ offset_right = 136.5
 offset_bottom = 242.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("2_ohhpf")
+script = ExtResource("4_ohhpf")
 chatContainer = NodePath("chat/chathistory")
-buttonContainer = NodePath("HBoxContainer")
+buttonContainer = NodePath("VBoxContainer")
+charRes = SubResource("Resource_hh5oj")
+playerRes = SubResource("Resource_vqfsp")
 
 [node name="PanelContainer" type="HBoxContainer" parent="screenRoot/screen/phoneTex/phoneContainer"]
 custom_minimum_size = Vector2(0, 50)
@@ -66,120 +78,38 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Guy 1"
 
-[node name="chat" type="ScrollContainer" parent="screenRoot/screen/phoneTex/phoneContainer"]
+[node name="chat" type="ScrollContainer" parent="screenRoot/screen/phoneTex/phoneContainer" node_paths=PackedStringArray("chatContainer")]
 layout_mode = 2
 size_flags_vertical = 3
-script = ExtResource("4_ohhpf")
+script = ExtResource("5_40w10")
+chatContainer = NodePath("chathistory")
 
 [node name="chathistory" type="VBoxContainer" parent="screenRoot/screen/phoneTex/phoneContainer/chat"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Text 1" type="Label" parent="screenRoot/screen/phoneTex/phoneContainer/chat/chathistory"]
+[node name="VBoxContainer" type="VBoxContainer" parent="screenRoot/screen/phoneTex/phoneContainer"]
 layout_mode = 2
-text = "Text 1"
+alignment = 2
 
-[node name="Text 2" type="Label" parent="screenRoot/screen/phoneTex/phoneContainer/chat/chathistory"]
+[node name="Button" type="Button" parent="screenRoot/screen/phoneTex/phoneContainer/VBoxContainer"]
 layout_mode = 2
-text = "Text 2"
+autowrap_mode = 3
 
-[node name="Text 3" type="Label" parent="screenRoot/screen/phoneTex/phoneContainer/chat/chathistory"]
+[node name="Button2" type="Button" parent="screenRoot/screen/phoneTex/phoneContainer/VBoxContainer"]
 layout_mode = 2
-text = "Text 3"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="screenRoot/screen/phoneTex/phoneContainer"]
+[node name="Button3" type="Button" parent="screenRoot/screen/phoneTex/phoneContainer/VBoxContainer"]
 layout_mode = 2
-alignment = 1
 
-[node name="Button" type="Button" parent="screenRoot/screen/phoneTex/phoneContainer/HBoxContainer"]
-layout_mode = 2
-text = "Message 1"
-
-[node name="Button2" type="Button" parent="screenRoot/screen/phoneTex/phoneContainer/HBoxContainer"]
-layout_mode = 2
-text = "Message 2"
-
-[node name="Button3" type="Button" parent="screenRoot/screen/phoneTex/phoneContainer/HBoxContainer"]
-layout_mode = 2
-text = "Message 3"
-
-[node name="phoneContainer2" type="VBoxContainer" parent="screenRoot/screen/phoneTex" node_paths=PackedStringArray("chatContainer")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -137.5
-offset_top = -241.0
-offset_right = 136.5
-offset_bottom = 242.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("2_ohhpf")
-chatContainer = NodePath("chat/chathistory")
-
-[node name="PanelContainer" type="HBoxContainer" parent="screenRoot/screen/phoneTex/phoneContainer2"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="TextureRect" type="TextureRect" parent="screenRoot/screen/phoneTex/phoneContainer2/PanelContainer"]
-layout_mode = 2
-texture = ExtResource("2_8rhti")
-expand_mode = 2
-
-[node name="Label" type="Label" parent="screenRoot/screen/phoneTex/phoneContainer2/PanelContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Guy 1"
-
-[node name="chat" type="ScrollContainer" parent="screenRoot/screen/phoneTex/phoneContainer2"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="chathistory" type="VBoxContainer" parent="screenRoot/screen/phoneTex/phoneContainer2/chat"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Text 1" type="Label" parent="screenRoot/screen/phoneTex/phoneContainer2/chat/chathistory"]
-layout_mode = 2
-text = "Text 1"
-
-[node name="Text 2" type="Label" parent="screenRoot/screen/phoneTex/phoneContainer2/chat/chathistory"]
-layout_mode = 2
-text = "Text 2"
-
-[node name="Text 3" type="Label" parent="screenRoot/screen/phoneTex/phoneContainer2/chat/chathistory"]
-layout_mode = 2
-text = "Text 3"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="screenRoot/screen/phoneTex/phoneContainer2"]
-layout_mode = 2
-alignment = 1
-
-[node name="Button" type="Button" parent="screenRoot/screen/phoneTex/phoneContainer2/HBoxContainer"]
-layout_mode = 2
-text = "Message 1"
-
-[node name="Button2" type="Button" parent="screenRoot/screen/phoneTex/phoneContainer2/HBoxContainer"]
-layout_mode = 2
-text = "Message 2"
-
-[node name="Button3" type="Button" parent="screenRoot/screen/phoneTex/phoneContainer2/HBoxContainer"]
-layout_mode = 2
-text = "Message 3"
-
-[node name="Button2" type="Button" parent="screenRoot/screen"]
+[node name="commit" type="Button" parent="screenRoot/screen"]
 layout_mode = 2
 text = "Commit <3"
 
+[connection signal="on_init" from="screenRoot/screen/phoneTex/phoneContainer" to="screenRoot/screen/phoneTex/phoneContainer/chat" method="_on_messages_init"]
 [connection signal="on_response" from="screenRoot/screen/phoneTex/phoneContainer" to="screenRoot/screen/phoneTex/phoneContainer/chat" method="_on_response"]
-[connection signal="button_down" from="screenRoot/screen/phoneTex/phoneContainer/HBoxContainer/Button" to="screenRoot/screen/phoneTex/phoneContainer" method="_on_message_1_down"]
-[connection signal="button_down" from="screenRoot/screen/phoneTex/phoneContainer/HBoxContainer/Button2" to="screenRoot/screen/phoneTex/phoneContainer" method="_on_message_2_down"]
-[connection signal="button_down" from="screenRoot/screen/phoneTex/phoneContainer/HBoxContainer/Button3" to="screenRoot/screen/phoneTex/phoneContainer" method="_on_message_3_down"]
-[connection signal="button_down" from="screenRoot/screen/phoneTex/phoneContainer2/HBoxContainer/Button" to="screenRoot/screen/phoneTex/phoneContainer2" method="_on_message_1_down"]
-[connection signal="button_down" from="screenRoot/screen/phoneTex/phoneContainer2/HBoxContainer/Button2" to="screenRoot/screen/phoneTex/phoneContainer2" method="_on_message_2_down"]
-[connection signal="button_down" from="screenRoot/screen/phoneTex/phoneContainer2/HBoxContainer/Button3" to="screenRoot/screen/phoneTex/phoneContainer2" method="_on_message_3_down"]
+[connection signal="responseFinish" from="screenRoot/screen/phoneTex/phoneContainer/chat" to="screenRoot/screen/phoneTex/phoneContainer" method="_on_chat_response_finish"]
+[connection signal="button_down" from="screenRoot/screen/phoneTex/phoneContainer/VBoxContainer/Button" to="screenRoot/screen/phoneTex/phoneContainer" method="_on_message_1_down"]
+[connection signal="button_down" from="screenRoot/screen/phoneTex/phoneContainer/VBoxContainer/Button2" to="screenRoot/screen/phoneTex/phoneContainer" method="_on_message_2_down"]
+[connection signal="button_down" from="screenRoot/screen/phoneTex/phoneContainer/VBoxContainer/Button3" to="screenRoot/screen/phoneTex/phoneContainer" method="_on_message_3_down"]

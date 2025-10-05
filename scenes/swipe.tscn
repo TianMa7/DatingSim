@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://b7ctmpd1q0bue"]
 
-[ext_resource type="Script" uid="uid://cap277rwcmeh8" path="res://scripts/swipeDetection.gd" id="1_66qhf"]
+[ext_resource type="Script" path="res://scripts/swipeDetection.gd" id="1_66qhf"]
 [ext_resource type="Texture2D" uid="uid://b8sq5t5tbup3i" path="res://assets/smart-phone-with-blank-screen-is-removebg-preview.png" id="1_khokj"]
 [ext_resource type="Script" uid="uid://cnwwfldtucg5r" path="res://scripts/profile.gd" id="2_56veq"]
 [ext_resource type="Script" uid="uid://bp1ga0hmmbtkl" path="res://scripts/phone_container.gd" id="2_66qhf"]
@@ -56,7 +56,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_khokj")
 
 [node name="phoneContainer2" type="VBoxContainer" parent="screenRoot/screen/phoneTex/phoneContainer"]
 layout_mode = 2
-script = ExtResource("2_66qhf")
 
 [node name="ProfilePhotoTex" type="TextureRect" parent="screenRoot/screen/phoneTex/phoneContainer/phoneContainer2"]
 layout_mode = 2

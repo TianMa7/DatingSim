@@ -1,7 +1,7 @@
 class_name DAwkyResponses
 extends Resource
 
-var responses = {
+@export var responses = {
 	0 : [[1, "Hiiii how was your day?"], [2, "What are your hobbies?"], [3, "Do you listen to music?"]],
 	1 : [[4, "Man that sucks! Hope you don’t get sick from the rain"]],
 	2 : [[5, "oh cool, anything good recently?"]],
