@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://blfrwphvi5tbr"
+path="res://.godot/imported/Calm Cafe - 2025-10-05, 3.18 PM.mp3-440e6308f3eb95a5fa302acb60681b90.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Calm Cafe - 2025-10-05, 3.18 PM.mp3"
+dest_files=["res://.godot/imported/Calm Cafe - 2025-10-05, 3.18 PM.mp3-440e6308f3eb95a5fa302acb60681b90.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

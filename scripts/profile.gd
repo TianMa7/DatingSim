@@ -155,6 +155,7 @@ var randName:String
 var randAboutMe:String
 var randZodiac:String
 var numOfInterests:int
+var isGoose:bool
 
 
 
@@ -167,13 +168,17 @@ func generateNewProfile():
 	interestsStr = ""
 	if randi_range(0,50) == 1:
 		#good goose is exculsive and rare
+		isGoose = true
 		randName = "Goose"
 		randAboutMe = "Honk"
 		randZodiac = "Honk"
 		interests.append("Honk")
 		$"../ProfilePhotoTex".setGoose()
+		$"../../../../../../AudioStreamPlayer".setGoose()
 	else:
-		
+		if isGoose:
+			$"../../../../../../AudioStreamPlayer".switchSong()
+			isGoose = false
 		
 		randName =  nameArr[randi_range(0, len(nameArr)-1)]
 		randAboutMe = aboutMeDic.keys().pick_random()
