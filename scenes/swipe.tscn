@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7ctmpd1q0bue"]
+[gd_scene load_steps=8 format=3 uid="uid://b7ctmpd1q0bue"]
 
 [ext_resource type="Script" uid="uid://cap277rwcmeh8" path="res://scripts/swipeDetection.gd" id="1_66qhf"]
 [ext_resource type="Texture2D" uid="uid://b8sq5t5tbup3i" path="res://assets/smart-phone-with-blank-screen-is-removebg-preview.png" id="1_khokj"]
 [ext_resource type="Script" uid="uid://cnwwfldtucg5r" path="res://scripts/profile.gd" id="2_56veq"]
 [ext_resource type="Script" uid="uid://bp1ga0hmmbtkl" path="res://scripts/phone_container.gd" id="2_66qhf"]
+[ext_resource type="Script" uid="uid://c2xqvlg3xoe6t" path="res://scripts/profile_photo.gd" id="4_5iagt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_khokj"]
 bg_color = Color(0.95596343, 0.9559633, 0.95596343, 1)
@@ -60,6 +61,9 @@ script = ExtResource("2_66qhf")
 [node name="ProfilePhotoTex" type="TextureRect" parent="screenRoot/screen/phoneTex/phoneContainer/phoneContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("4_5iagt")
 
 [node name="ProfileTextLabel" type="RichTextLabel" parent="screenRoot/screen/phoneTex/phoneContainer/phoneContainer2"]
 custom_minimum_size = Vector2(0, 270)

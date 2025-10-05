@@ -20,6 +20,7 @@ func _process(delta: float) -> void:
 				else:
 					swipeRight = false
 					$phoneTex/phoneContainer/phoneContainer2/ProfileTextLabel.generateNewProfile()
+					$phoneTex/phoneContainer/phoneContainer2/ProfilePhotoTex.generateProfilePic()
 				swiping = false
 	
 		
