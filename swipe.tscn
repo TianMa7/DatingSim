@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7ctmpd1q0bue"]
+
+[ext_resource type="Texture2D" uid="uid://b8sq5t5tbup3i" path="res://assets/smart-phone-with-blank-screen-is-removebg-preview.png" id="1_khokj"]
+[ext_resource type="Script" uid="uid://cnwwfldtucg5r" path="res://profile.gd" id="2_56veq"]
+[ext_resource type="Script" uid="uid://bp1ga0hmmbtkl" path="res://phone_container.gd" id="2_66qhf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_khokj"]
+bg_color = Color(0.95596343, 0.9559633, 0.95596343, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_56veq"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="screenRoot" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1151.0
+offset_bottom = 646.0
+
+[node name="screen" type="HBoxContainer" parent="screenRoot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="phoneTex" type="TextureRect" parent="screenRoot/screen"]
+layout_mode = 2
+texture = ExtResource("1_khokj")
+expand_mode = 3
+
+[node name="phoneContainer" type="PanelContainer" parent="screenRoot/screen/phoneTex"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -135.89969
+offset_top = 78.0
+offset_right = 140.10031
+offset_bottom = -73.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_khokj")
+
+[node name="phoneContainer2" type="VBoxContainer" parent="screenRoot/screen/phoneTex/phoneContainer" node_paths=PackedStringArray("chatContainer")]
+layout_mode = 2
+script = ExtResource("2_66qhf")
+chatContainer = NodePath("")
+
+[node name="ProfilePhotoTex" type="TextureRect" parent="screenRoot/screen/phoneTex/phoneContainer/phoneContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ProfileTextLabel" type="RichTextLabel" parent="screenRoot/screen/phoneTex/phoneContainer/phoneContainer2"]
+custom_minimum_size = Vector2(0, 270)
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_styles/focus = SubResource("StyleBoxFlat_56veq")
+bbcode_enabled = true
+script = ExtResource("2_56veq")
