@@ -1,11 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b7ctmpd1q0bue"]
+[gd_scene load_steps=7 format=3 uid="uid://b7ctmpd1q0bue"]
 
 [ext_resource type="Script" uid="uid://cap277rwcmeh8" path="res://scripts/swipeDetection.gd" id="1_66qhf"]
 [ext_resource type="Texture2D" uid="uid://b8sq5t5tbup3i" path="res://assets/smart-phone-with-blank-screen-is-removebg-preview.png" id="1_khokj"]
 [ext_resource type="Script" uid="uid://cnwwfldtucg5r" path="res://scripts/profile.gd" id="2_56veq"]
-[ext_resource type="Script" uid="uid://bp1ga0hmmbtkl" path="res://scripts/phone_container.gd" id="2_66qhf"]
 [ext_resource type="Script" path="res://scripts/profile_photo.gd" id="4_5iagt"]
-[ext_resource type="Script" uid="uid://dohgvoragf81a" path="res://scripts/music.gd" id="6_liau1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_khokj"]
 bg_color = Color(0.95596343, 0.9559633, 0.95596343, 1)
@@ -72,7 +70,3 @@ size_flags_vertical = 10
 theme_override_styles/focus = SubResource("StyleBoxFlat_56veq")
 bbcode_enabled = true
 script = ExtResource("2_56veq")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-autoplay = true
-script = ExtResource("6_liau1")
