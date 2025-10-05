@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://iywo421n2osq"]
+[gd_scene load_steps=2 format=3 uid="uid://b6fdygbd66u57"]
 
-[ext_resource type="Script" uid="uid://bsq7fr5s2cry3" path="res://scripts/endingMusic.gd" id="1_nld2j"]
+[ext_resource type="Script" path="res://scripts/endingMusic.gd" id="1_nld2j"]
 
 [node name="EndScene" type="Node2D"]
 
