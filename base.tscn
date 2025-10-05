@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5jxyh2x7o3mq"]
+[gd_scene load_steps=5 format=3 uid="uid://c5jxyh2x7o3mq"]
 
 [ext_resource type="Texture2D" uid="uid://b8sq5t5tbup3i" path="res://assets/smart-phone-with-blank-screen-is-removebg-preview.png" id="1_3vi8l"]
 [ext_resource type="Texture2D" uid="uid://b0yrg6w3ujsmo" path="res://assets/me-dude.png" id="2_8rhti"]
-[ext_resource type="Script" uid="uid://bp1ga0hmmbtkl" path="res://phone_container.gd" id="2_ohhpf"]
+[ext_resource type="Script" uid="uid://bp1ga0hmmbtkl" path="res://scripts/phone_container.gd" id="2_ohhpf"]
+[ext_resource type="Script" uid="uid://c1xnotw5ibo7d" path="res://scripts/response_manager.gd" id="4_ohhpf"]
 
 [node name="root" type="Node2D"]
 
@@ -31,7 +32,7 @@ layout_mode = 2
 texture = ExtResource("1_3vi8l")
 expand_mode = 3
 
-[node name="phoneContainer" type="VBoxContainer" parent="screenRoot/screen/phoneTex" node_paths=PackedStringArray("chatContainer")]
+[node name="phoneContainer" type="VBoxContainer" parent="screenRoot/screen/phoneTex" node_paths=PackedStringArray("chatContainer", "buttonContainer")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -46,6 +47,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_ohhpf")
 chatContainer = NodePath("chat/chathistory")
+buttonContainer = NodePath("HBoxContainer")
 
 [node name="PanelContainer" type="HBoxContainer" parent="screenRoot/screen/phoneTex/phoneContainer"]
 custom_minimum_size = Vector2(0, 50)
@@ -65,6 +67,7 @@ text = "Guy 1"
 [node name="chat" type="ScrollContainer" parent="screenRoot/screen/phoneTex/phoneContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+script = ExtResource("4_ohhpf")
 
 [node name="chathistory" type="VBoxContainer" parent="screenRoot/screen/phoneTex/phoneContainer/chat"]
 layout_mode = 2
@@ -103,6 +106,7 @@ text = "Message 3"
 layout_mode = 2
 text = "Commit <3"
 
+[connection signal="on_response" from="screenRoot/screen/phoneTex/phoneContainer" to="screenRoot/screen/phoneTex/phoneContainer/chat" method="_on_response"]
 [connection signal="button_down" from="screenRoot/screen/phoneTex/phoneContainer/HBoxContainer/Button" to="screenRoot/screen/phoneTex/phoneContainer" method="_on_message_1_down"]
 [connection signal="button_down" from="screenRoot/screen/phoneTex/phoneContainer/HBoxContainer/Button2" to="screenRoot/screen/phoneTex/phoneContainer" method="_on_message_2_down"]
 [connection signal="button_down" from="screenRoot/screen/phoneTex/phoneContainer/HBoxContainer/Button3" to="screenRoot/screen/phoneTex/phoneContainer" method="_on_message_3_down"]
