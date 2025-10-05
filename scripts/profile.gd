@@ -4,44 +4,47 @@ var nameArr = ["Asher", "Avery", "Aiden", "Aria", "Angel", "Adrian", "Atlas", "A
 "Alaia", "Aubrey", "Ashley", "Ashton", "Arya", "Alex", "Ayden", "Ariel", "Andrea", "Aspen", "Ari", "Armani",
 "Aly", "Arbor", "Atlee", "Azure", "Arlyn", "Aviv", "Afton", "Aero", "Avalee", "Arvy", "Almarine", "Antalya", "Antigone"]
 
-var aboutMeArr = ["I'm a little silly", "6’7",
-	"Rich submissive guy looking for a queen to serve, I’ll kiss your feet, worship you, I’ll do anything you tell me to. In return I want you to treat me badly. I’ll be loyal like a dog. You are fully in charge.",
-	"Looking for a new emergency contact",
-	"Call the chiropractor, I’m back",
-	"I’m batman",
-	"Looking for my next bad decision",
-	"Hi I’m ___, currently seeking a co-op. I am proficient in C++, Java, and Python. I have 3 years of experience working with AutoCAD, Blender,  and Solidworks. My excellent communication and collaboration skills developed through group projects and assignments will be a valuable asset to any team. Please message me if you are interested.",
-	"Software Developer with 5 years of experience building modular, high-performance enterprise applications. Skilled using agentic frameworks to design robust AI solutions, with a focus on backend development, performance optimization",
-	"I’m town hall 12 in clash of clans",
-	"I’m scared of women",
-	"I’m scared of men",
-	"Cucumber.",
-	"I’m a really nice guy, trust me, just don’t push my buttons or you will see my dark side. rawr",
-	"Call me inertia the way I am in a constant state of motion",
-	"Do you like water? Then you already like 70% of me. :)",
-	"According to Newton’s law of gravitation, all masses in the universe attract. Therefore you and I are already attracted ;)",
-	"Times new roman in the streets, wingdings in the sheets",
-	"Looking for a friend to perform sacrificial goat rituals with.",
-	"My mom says I’m really mature for my age",
-	"I love my dog more than I’ll ever love you. Know your place",
-	"Super hyped to be on tinder! Thank you to my parents who are very supportive of my endevours to meet strangers, my friends who helped me set this all up, and finally to my ex, without whom none of this could have been possible.",
-	"I enjoy playing the fortinitght too",
-	"is this how use I the tinder?",
-	"plsplsplsplsplsplsplsplsplspls just give me a chance",
-	"Looking for someone trusting and healthy. Both kidneys MUST be intact with no previous medical conditions. Also someone with a penchant for exploring dark alleyways and remote mountaintops.",
-	"Minimum requirement: Must be able to get rid of spiders",
-	"Never gonna give you up, never gonna let you down. No. Seriously. I won’t",
-	"I can make really good hamburger steak and grilled salmon.",
-	"If I’m trash, will you take me out?",
-	"I love coffee, matcha, and books.",
-	"I can steal your tie without you noticing.",
-	"Need someone to share brain cells with me. I’m running out :(",
-	"Looking for new music recs!",
-	"but whoever blasphemes against the Holy Spirit never has forgiveness, but is guilty of an eternal sin\"(3:29)",
-	"“Imperfection is beauty, madness is genius and it's better to be absolutely ridiculous than absolutely boring.”― Marilyn Monroe",
-	"“We are all in the gutter, but some of us are looking at the stars.”― Oscar Wilde",
-    "“Yesterday is history, tomorrow is a mystery, today is a gift of God, which is why we call it the present.”― Bill Keane"
-]
+var aboutMeDic = {
+	"I'm a little silly": false,
+	"6’7": false,
+	"Rich submissive guy looking for a queen to serve, I’ll kiss your feet, worship you, I’ll do anything you tell me to. In return I want you to treat me badly. I’ll be loyal like a dog. You are fully in charge.": false,
+	"Looking for a new emergency contact": false,
+	"Call the chiropractor, I’m back": false,
+	"I’m batman": false,
+	"Looking for my next bad decision": false,
+	"Hi I’m currently seeking a co-op. I am proficient in C++, Java, and Python. I have 3 years of experience working with AutoCAD, Blender,  and Solidworks. My excellent communication and collaboration skills developed through group projects and assignments will be a valuable asset to any team. Please message me if you are interested.": false,
+	"Software Developer with 5 years of experience building modular, high-performance enterprise applications. Skilled using agentic frameworks to design robust AI solutions, with a focus on backend development, performance optimization": false,
+	"I’m town hall 12 in clash of clans": false,
+	"I’m scared of women": false,
+	"I’m scared of men": false,
+	"Cucumber.": true,
+	"I’m a really nice guy, trust me, just don’t push my buttons or you will see my dark side. rawr": false,
+	"Call me inertia the way I am in a constant state of motion": false,
+	"Do you like water? Then you already like 70% of me. :)": false,
+	"According to Newton’s law of gravitation, all masses in the universe attract. Therefore you and I are already attracted ;)": false,
+	"Times new roman in the streets, wingdings in the sheets": false,
+	"Looking for a friend to perform sacrificial goat rituals with.": true,
+	"My mom says I’m really mature for my age": false,
+	"I love my dog more than I’ll ever love you. Know your place": false,
+	"Super hyped to be on tinder! Thank you to my parents who are very supportive of my endevours to meet strangers, my friends who helped me set this all up, and finally to my ex, without whom none of this could have been possible.": false,
+	"I enjoy playing the fortinitght too": true,
+	"is this how use I the tinder?": true,
+	"plsplsplsplsplsplsplsplsplspls just give me a chance": false,
+	"Looking for someone trusting and healthy. Both kidneys MUST be intact with no previous medical conditions. Also someone with a penchant for exploring dark alleyways and remote mountaintops.": false,
+	"Minimum requirement: Must be able to get rid of spiders": false,
+	"Never gonna give you up, never gonna let you down. No. Seriously. I won’t": false,
+	"I can make really good hamburger steak and grilled salmon.": false,
+	"If I’m trash, will you take me out?": false,
+	"I love coffee, matcha, and books.": false,
+	"I can steal your tie without you noticing.": false,
+	"Need someone to share brain cells with me. I’m running out :(": false,
+	"Looking for new music recs!": false,
+	"but whoever blasphemes against the Holy Spirit never has forgiveness, but is guilty of an eternal sin\"(3:29)": false,
+	"“Imperfection is beauty, madness is genius and it's better to be absolutely ridiculous than absolutely boring.”― Marilyn Monroe": false,
+	"“We are all in the gutter, but some of us are looking at the stars.”― Oscar Wilde": false,
+	"“Yesterday is history, tomorrow is a mystery, today is a gift of God, which is why we call it the present.”― Bill Keane": false
+}
+
 
 
 var zodiacArr = ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn",
@@ -148,9 +151,9 @@ var interests_dict = {
 var isDemon:bool
 var interests = [];
 var interestsStr = ""
-var randNameInt:int
-var randAboutMeInt:int
-var randZodiacInt:int
+var randName:String
+var randAboutMe:String
+var randZodiac:String
 var numOfInterests:int
 
 
@@ -162,16 +165,29 @@ func generateNewProfile():
 	isDemon = false
 	interests = [];
 	interestsStr = ""
-	randNameInt = randi_range(0, len(nameArr)-1)
-	randAboutMeInt = randi_range(0, len(aboutMeArr)-1)
-	randZodiacInt = randi_range(0, len(zodiacArr)-1)
-	numOfInterests = randi_range(0, len(interestsArr)-60)
+	if randi_range(0,50) == 1:
+		#good goose is exculsive and rare
+		randName = "Goose"
+		randAboutMe = "Honk"
+		randZodiac = "Honk"
+		interests.append("Honk")
+		$"../ProfilePhotoTex".setGoose()
+	else:
+		
+		
+		randName =  nameArr[randi_range(0, len(nameArr)-1)]
+		randAboutMe = aboutMeDic.keys().pick_random()
+		if aboutMeDic[randAboutMe]:
+			isDemon = true
+		randZodiac = zodiacArr[randi_range(0, len(zodiacArr)-1)]
+		numOfInterests = randi_range(0, len(interestsArr)-60)
+		getInterests()
 	clear()
 	push_font_size(20)
-	append_name_line("Name", nameArr[randNameInt])
+	append_name_line("Name", randName)
 	push_font_size(15)
-	append_text("[color=black]%s[/color]\n" % [aboutMeArr[randAboutMeInt]])
-	append_profile_line("Zodiac", zodiacArr[randZodiacInt])
+	append_text("[color=black]%s[/color]\n" % randAboutMe)
+	append_profile_line("Zodiac", randZodiac)
 	append_interests()
 	append_profile_line("Status", isDemon)
 	
@@ -198,6 +214,8 @@ func append_profile_line(username, message):
 	append_text("[color=black][b]%s[/b]: %s[/color]\n" % [username, message])
 	
 func append_interests():
-	getInterests()
 	interestsStr = listToString(interests)
 	append_text("[color=black][b]Interests[/b]: %s[/color]\n" % [interestsStr])
+
+func isPersonDemon()->bool:
+	return isDemon

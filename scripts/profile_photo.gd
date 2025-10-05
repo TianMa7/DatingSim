@@ -4,7 +4,6 @@ var profilePicsDic = {
 	"res://assets/badgoose.png": false,
 	"res://assets/badidk.png": false,
 	"res://assets/creepiernormalperson.png": false,
-	"res://assets/goodgoose.png":false,
 	"res://assets/goodidk.png":false,
 	"res://assets/greg.png":false,
 	"res://assets/me-dude.png":false,
@@ -24,3 +23,8 @@ func pick_random(dictionary: Dictionary) -> Variant:
 func generateProfilePic():
 	profilePic = pick_random(profilePicsDic)
 	set_texture(load(profilePic))
+func setGoose():
+	set_texture(load("res://assets/goodgoose.png"))
+
+func isPersonDemon():
+	return profilePicsDic[profilePic]

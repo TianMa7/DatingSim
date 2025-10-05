@@ -19,8 +19,10 @@ func _process(delta: float) -> void:
 					get_tree().change_scene_to_file("res://scenes/base.tscn")
 				else:
 					swipeRight = false
-					$phoneTex/phoneContainer/phoneContainer2/ProfileTextLabel.generateNewProfile()
 					$phoneTex/phoneContainer/phoneContainer2/ProfilePhotoTex.generateProfilePic()
+					#you have to set profilepic first cuz the logic of wether or not its a goose will overwrite it in the function below
+					$phoneTex/phoneContainer/phoneContainer2/ProfileTextLabel.generateNewProfile()
+					
 				swiping = false
 	
 		
