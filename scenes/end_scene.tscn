@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=2 format=3 uid="uid://cbvu2bnfkfmbm"]
+=======
+[gd_scene load_steps=2 format=3 uid="uid://b6fdygbd66u57"]
+>>>>>>> dacacd4e92496d1a6aa0f83e5da6992e447ad0ce
 
 [ext_resource type="Script" path="res://scripts/endingMusic.gd" id="1_nld2j"]
 
