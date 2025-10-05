@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 			if startPos.distance_to(currPos)>=tolerance:
 				if (currPos.x-startPos.x)>0:
 					swipeRight = true
-					print("go to convo")
+					get_tree().change_scene_to_file("res://scenes/base.tscn")
 				else:
 					swipeRight = false
 					$phoneTex/phoneContainer/phoneContainer2/ProfileTextLabel.generateNewProfile()
