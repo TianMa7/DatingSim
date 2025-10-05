@@ -198,8 +198,10 @@ func generateNewProfile() -> String:
 		randAboutMe = aboutMeDic.keys().pick_random()
 		if aboutMeDic[randAboutMe]:
 			isDemon = true
+			demon.setDemon(true)
 			personality = demonPersArr[randi_range(0, len(demonPersArr)-1)]
 		else:
+			demon.setDemon(false)
 			personality = persArr[randi_range(0, len(persArr)-1)]
 		randZodiac = zodiacArr[randi_range(0, len(zodiacArr)-1)]
 		numOfInterests = randi_range(0, len(interestsArr)-60)
