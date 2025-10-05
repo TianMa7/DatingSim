@@ -1,11 +1,91 @@
-[gd_scene load_steps=7 format=3 uid="uid://c5jxyh2x7o3mq"]
+[gd_scene load_steps=39 format=3 uid="uid://c5jxyh2x7o3mq"]
 
 [ext_resource type="Texture2D" uid="uid://b8sq5t5tbup3i" path="res://assets/smart-phone-with-blank-screen-is-removebg-preview.png" id="1_3vi8l"]
 [ext_resource type="Script" path="res://reportBtn.gd" id="1_ohhpf"]
 [ext_resource type="Texture2D" uid="uid://b0yrg6w3ujsmo" path="res://assets/me-dude.png" id="2_8rhti"]
+[ext_resource type="Script" path="res://info/chipper_msgs.gd" id="4_b085t"]
+[ext_resource type="Script" uid="uid://bid8oq3r8g0ue" path="res://info/d_awky_msgs.gd" id="4_hh5oj"]
+[ext_resource type="Script" path="res://info/bade_msgs.gd" id="4_i6jx3"]
 [ext_resource type="Script" uid="uid://bp1ga0hmmbtkl" path="res://scripts/player_manager.gd" id="4_ohhpf"]
+[ext_resource type="Script" path="res://info/chipper_resp.gd" id="5_33mrd"]
 [ext_resource type="Script" uid="uid://c1xnotw5ibo7d" path="res://scripts/character_manager.gd" id="5_40w10"]
+[ext_resource type="Script" path="res://info/bade_resp.gd" id="5_jn13j"]
+[ext_resource type="Script" uid="uid://c4f2m5mvmjhdl" path="res://info/d_awky_resp.gd" id="5_vqfsp"]
+[ext_resource type="Script" path="res://info/d_chipper_msgs.gd" id="6_aomoi"]
 [ext_resource type="Script" path="res://scripts/commit.gd" id="6_xvvcp"]
+[ext_resource type="Script" path="res://info/d_chipper_resp.gd" id="7_ktrk3"]
+[ext_resource type="Script" path="res://info/d_bade_msgs.gd" id="10_s5nuq"]
+[ext_resource type="Script" path="res://info/d_bade_resp.gd" id="11_lefm6"]
+[ext_resource type="Script" path="res://info/goose_msgs.gd" id="12_03t26"]
+[ext_resource type="Script" path="res://info/goose_resp.gd" id="13_ntevj"]
+[ext_resource type="Script" path="res://info/d_goose_msgs.gd" id="14_c8kgi"]
+[ext_resource type="Script" path="res://info/d_goose_resp.gd" id="15_pmwj3"]
+[ext_resource type="Script" path="res://info/awky_msgs.gd" id="16_82vju"]
+[ext_resource type="Script" path="res://info/awky_resp.gd" id="17_vs80n"]
+
+[sub_resource type="Resource" id="Resource_33mrd"]
+script = ExtResource("4_b085t")
+metadata/_custom_type_script = "uid://7a4f0thc4t5w"
+
+[sub_resource type="Resource" id="Resource_aomoi"]
+script = ExtResource("5_33mrd")
+metadata/_custom_type_script = "uid://dh511pqlbhq7l"
+
+[sub_resource type="Resource" id="Resource_ktrk3"]
+script = ExtResource("6_aomoi")
+metadata/_custom_type_script = "uid://chcxrulu6tt3l"
+
+[sub_resource type="Resource" id="Resource_s5nuq"]
+script = ExtResource("7_ktrk3")
+metadata/_custom_type_script = "uid://ij6d3jkmot2f"
+
+[sub_resource type="Resource" id="Resource_lefm6"]
+script = ExtResource("4_i6jx3")
+metadata/_custom_type_script = "uid://5l6uujkpi43v"
+
+[sub_resource type="Resource" id="Resource_03t26"]
+script = ExtResource("5_jn13j")
+metadata/_custom_type_script = "uid://xnv8f0vyn7mt"
+
+[sub_resource type="Resource" id="Resource_ntevj"]
+script = ExtResource("10_s5nuq")
+metadata/_custom_type_script = "uid://depdhgurqomkx"
+
+[sub_resource type="Resource" id="Resource_c8kgi"]
+script = ExtResource("11_lefm6")
+metadata/_custom_type_script = "uid://bsn1i5lthejss"
+
+[sub_resource type="Resource" id="Resource_pmwj3"]
+script = ExtResource("12_03t26")
+metadata/_custom_type_script = "uid://cv4t3que06g04"
+
+[sub_resource type="Resource" id="Resource_82vju"]
+script = ExtResource("13_ntevj")
+metadata/_custom_type_script = "uid://vhwwqu7yvhjg"
+
+[sub_resource type="Resource" id="Resource_vs80n"]
+script = ExtResource("14_c8kgi")
+metadata/_custom_type_script = "uid://bibuqtp0fll76"
+
+[sub_resource type="Resource" id="Resource_s6kkj"]
+script = ExtResource("15_pmwj3")
+metadata/_custom_type_script = "uid://de7gp1w26cqn2"
+
+[sub_resource type="Resource" id="Resource_rtpsq"]
+script = ExtResource("16_82vju")
+metadata/_custom_type_script = "uid://b6dv08lvay7jp"
+
+[sub_resource type="Resource" id="Resource_ei55q"]
+script = ExtResource("17_vs80n")
+metadata/_custom_type_script = "uid://bgo855aatojur"
+
+[sub_resource type="Resource" id="Resource_65va3"]
+script = ExtResource("4_hh5oj")
+metadata/_custom_type_script = "uid://bid8oq3r8g0ue"
+
+[sub_resource type="Resource" id="Resource_b73mi"]
+script = ExtResource("5_vqfsp")
+metadata/_custom_type_script = "uid://c4f2m5mvmjhdl"
 
 [node name="root" type="Node2D"]
 
@@ -51,6 +131,22 @@ grow_vertical = 2
 script = ExtResource("4_ohhpf")
 chatContainer = NodePath("chat/chathistory")
 buttonContainer = NodePath("VBoxContainer")
+chipperCharRes = SubResource("Resource_33mrd")
+chipperPlayRes = SubResource("Resource_aomoi")
+d_chipperCharRes = SubResource("Resource_ktrk3")
+d_chipperPlayRes = SubResource("Resource_s5nuq")
+badeCharRes = SubResource("Resource_lefm6")
+badePlayRes = SubResource("Resource_03t26")
+d_badeCharRes = SubResource("Resource_ntevj")
+d_badePlayRes = SubResource("Resource_c8kgi")
+gooseCharRes = SubResource("Resource_pmwj3")
+goosePlayRes = SubResource("Resource_82vju")
+d_gooseCharRes = SubResource("Resource_vs80n")
+d_goosePlayRes = SubResource("Resource_s6kkj")
+awkyCharRes = SubResource("Resource_rtpsq")
+awkyPlayRes = SubResource("Resource_ei55q")
+d_awkyCharRes = SubResource("Resource_65va3")
+d_awkyPlayRes = SubResource("Resource_b73mi")
 
 [node name="PanelContainer" type="HBoxContainer" parent="screenRoot/screen/phoneTex/phoneContainer"]
 custom_minimum_size = Vector2(0, 50)
@@ -67,10 +163,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Guy 1"
 
-[node name="chat" type="ScrollContainer" parent="screenRoot/screen/phoneTex/phoneContainer"]
+[node name="chat" type="ScrollContainer" parent="screenRoot/screen/phoneTex/phoneContainer" node_paths=PackedStringArray("chatContainer")]
 layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("5_40w10")
+chatContainer = NodePath("chathistory")
 
 [node name="chathistory" type="VBoxContainer" parent="screenRoot/screen/phoneTex/phoneContainer/chat"]
 layout_mode = 2
@@ -96,7 +193,9 @@ layout_mode = 2
 text = "Commit <3"
 script = ExtResource("6_xvvcp")
 
+[connection signal="on_init" from="screenRoot/screen/phoneTex/phoneContainer" to="screenRoot/screen/phoneTex/phoneContainer/chat" method="_on_messages_init"]
 [connection signal="on_response" from="screenRoot/screen/phoneTex/phoneContainer" to="screenRoot/screen/phoneTex/phoneContainer/chat" method="_on_response"]
+[connection signal="responseFinish" from="screenRoot/screen/phoneTex/phoneContainer/chat" to="screenRoot/screen/phoneTex/phoneContainer" method="_on_chat_response_finish"]
 [connection signal="button_down" from="screenRoot/screen/phoneTex/phoneContainer/VBoxContainer/Button" to="screenRoot/screen/phoneTex/phoneContainer" method="_on_message_1_down"]
 [connection signal="button_down" from="screenRoot/screen/phoneTex/phoneContainer/VBoxContainer/Button2" to="screenRoot/screen/phoneTex/phoneContainer" method="_on_message_2_down"]
 [connection signal="button_down" from="screenRoot/screen/phoneTex/phoneContainer/VBoxContainer/Button3" to="screenRoot/screen/phoneTex/phoneContainer" method="_on_message_3_down"]

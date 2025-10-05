@@ -148,6 +148,20 @@ var interests_dict = {
 	"F1": false
 }
 
+var persArr = [
+	"chipper",
+	"bade",
+	"goose",
+	"awky",
+]
+
+var demonPersArr = [
+	"d_chipper",
+	"d_bade",
+	"d_goose",
+	"d_awky",
+]
+
 var isDemon:bool
 var interests = [];
 var interestsStr = ""
@@ -156,13 +170,12 @@ var randAboutMe:String
 var randZodiac:String
 var numOfInterests:int
 var isGoose:bool
-
-
+var personality:String = "goose"
 
 func _ready():
 	generateNewProfile()
 	
-func generateNewProfile():
+func generateNewProfile() -> String:
 	isDemon = false
 	interests = [];
 	interestsStr = ""
@@ -173,6 +186,7 @@ func generateNewProfile():
 		randAboutMe = "Honk"
 		randZodiac = "Honk"
 		interests.append("Honk")
+		personality = "goose"
 		$"../ProfilePhotoTex".setGoose()
 		$"../../../../../../AudioStreamPlayer".setGoose()
 	else:
@@ -184,9 +198,13 @@ func generateNewProfile():
 		randAboutMe = aboutMeDic.keys().pick_random()
 		if aboutMeDic[randAboutMe]:
 			isDemon = true
+			personality = demonPersArr[randi_range(0, len(demonPersArr)-1)]
+		else:
+			personality = persArr[randi_range(0, len(persArr)-1)]
 		randZodiac = zodiacArr[randi_range(0, len(zodiacArr)-1)]
 		numOfInterests = randi_range(0, len(interestsArr)-60)
 		getInterests()
+		
 	clear()
 	push_font_size(20)
 	append_name_line("Name", randName)
@@ -195,6 +213,7 @@ func generateNewProfile():
 	append_profile_line("Zodiac", randZodiac)
 	append_interests()
 	append_profile_line("Status", isDemon)
+	return personality
 	
 
 func getInterests():

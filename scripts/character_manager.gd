@@ -1,7 +1,7 @@
 extends ScrollContainer
 
 @export var chatContainer : VBoxContainer
-var charRes : DAwkyMessages
+var charRes : Resource
 
 signal responseFinish(messageGroupID : int)
 
@@ -19,6 +19,6 @@ func _on_response(responseID: int) -> void:
 			chatContainer.add_child(chat)
 			responseFinish.emit(response[0])
 
-func _on_messages_init(responses: DAwkyMessages) -> void:
+func _on_messages_init(responses: Resource) -> void:
 	charRes = responses
 	_on_response(0)
