@@ -5,7 +5,7 @@ extends VBoxContainer
 
 signal on_response(responseID : int)
 
-var responding : bool = true
+var responding : bool = false
 
 func _process(_delta : float) -> void:
 	buttonContainer.visible = responding
