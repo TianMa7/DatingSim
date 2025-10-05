@@ -119,26 +119,40 @@ var interests_dict = {
 
 var isDemon:bool
 var interests = [];
-var randNameInt = randi_range(0, len(nameArr)-1)
-var randAboutMeInt = randi_range(0, len(aboutMeArr)-1)
-var randZodiacInt = randi_range(0, len(zodiacArr)-1)
-var numOfInterests = randi_range(0, len(interestsArr)-60)
+var interestsStr = ""
+var randNameInt:int
+var randAboutMeInt:int
+var randZodiacInt:int
+var numOfInterests:int
 
 
 
 func _ready():
+	generateNewProfile()
+	
+func generateNewProfile():
 	isDemon = false
-	push_font_size(15)
+	interests = [];
+	interestsStr = ""
+	randNameInt = randi_range(0, len(nameArr)-1)
+	randAboutMeInt = randi_range(0, len(aboutMeArr)-1)
+	randZodiacInt = randi_range(0, len(zodiacArr)-1)
+	numOfInterests = randi_range(0, len(interestsArr)-60)
+	clear()
+	push_font_size(20)
 	append_name_line("Name", nameArr[randNameInt])
+	push_font_size(15)
 	append_text("[color=black]%s[/color]\n" % [aboutMeArr[randAboutMeInt]])
 	append_profile_line("Zodiac", zodiacArr[randZodiacInt])
 	append_interests()
 	append_profile_line("Status", isDemon)
+	
 
 func getInterests():
 	for i in range(0, numOfInterests):
 		interests.append(interestsArr[randi_range(0, len(interestsArr)-1)])
 		if interests_dict.get(interests[-1]):
+			print("awawa")
 			isDemon = true
 
 
@@ -150,14 +164,13 @@ func listToString(lst):
 	return string
 	
 
-# Appends the user's message as-is, without escaping. This is dangerous!
 func append_name_line(username, message):
 	append_text("[b][color=black]%s: %s[/color][/b]\n" % [username, message])
 	
 func append_profile_line(username, message):
-	append_text("[color=black]%s: %s[/color]\n" % [username, message])
+	append_text("[color=black][b]%s[/b]: %s[/color]\n" % [username, message])
 	
 func append_interests():
 	getInterests()
-	interests = listToString(interests)
-	append_text("[color=black]Interests: %s[/color]\n" % [interests])
+	interestsStr = listToString(interests)
+	append_text("[color=black][b]Interests[/b]: %s[/color]\n" % [interestsStr])
