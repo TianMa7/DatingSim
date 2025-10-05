@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://b7ctmpd1q0bue"]
 
-[ext_resource type="Script" uid="uid://cap277rwcmeh8" path="res://swipeDetection.gd" id="1_66qhf"]
+[ext_resource type="Script" uid="uid://cap277rwcmeh8" path="res://scripts/swipeDetection.gd" id="1_66qhf"]
 [ext_resource type="Texture2D" uid="uid://b8sq5t5tbup3i" path="res://assets/smart-phone-with-blank-screen-is-removebg-preview.png" id="1_khokj"]
-[ext_resource type="Script" uid="uid://cnwwfldtucg5r" path="res://profile.gd" id="2_56veq"]
-[ext_resource type="Script" uid="uid://bp1ga0hmmbtkl" path="res://phone_container.gd" id="2_66qhf"]
+[ext_resource type="Script" uid="uid://cnwwfldtucg5r" path="res://scripts/profile.gd" id="2_56veq"]
+[ext_resource type="Script" uid="uid://bp1ga0hmmbtkl" path="res://scripts/phone_container.gd" id="2_66qhf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_khokj"]
 bg_color = Color(0.95596343, 0.9559633, 0.95596343, 1)
@@ -53,10 +53,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_khokj")
 
-[node name="phoneContainer2" type="VBoxContainer" parent="screenRoot/screen/phoneTex/phoneContainer" node_paths=PackedStringArray("chatContainer")]
+[node name="phoneContainer2" type="VBoxContainer" parent="screenRoot/screen/phoneTex/phoneContainer"]
 layout_mode = 2
 script = ExtResource("2_66qhf")
-chatContainer = NodePath("")
 
 [node name="ProfilePhotoTex" type="TextureRect" parent="screenRoot/screen/phoneTex/phoneContainer/phoneContainer2"]
 layout_mode = 2
